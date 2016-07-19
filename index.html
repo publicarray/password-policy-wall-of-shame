@@ -1,0 +1,170 @@
+---
+layout: default
+title: Index
+permalink: index.html
+---
+
+<table class="ui celled structured table">
+  <thead>
+    <tr>
+      <th rowspan="2">Website</th>
+      <th colspan="5">Password Policy</th>
+      <!-- <th rowspan="2">Hashing Algorithm</th> -->
+      <th rowspan="2"><a href="https://www.ssllabs.com/ssltest/analyze.html">Qualys SSL Labs</a></th>
+      <th rowspan="2"><a href="https://securityheaders.io">Security Headers</a></th>
+      <!-- <th rowspan="2"><a href="http://plaintextoffenders.com">Plain Text Offender</a></th> -->
+    </tr>
+    <tr>
+      <th>Min<span class="ui icon" data-tooltip="Minimum number of characters allowed" data-inverted=""><i class="info circle icon"></i></span></th>
+      <th>Max<span class="ui icon" data-tooltip="Maximum number of characters allowed" data-inverted=""><i class="info circle icon"></i></span></th>
+      <th>Character set<span class="ui icon" data-tooltip="The different character sets that are allowed" data-inverted=""><i class="info circle icon"></i></span></th>
+      <th>Top10<span class="ui icon" data-tooltip="If the top used passwords are blacklisted" data-inverted=""><i class="info circle icon"></i></span></th>
+      <th>Proof<span class="ui icon" data-tooltip="Image of the password policy" data-inverted=""><i class="info circle icon"></i></span></th>
+    </tr>
+  </thead>
+  <tbody>
+{% for website_object in site.data.websites %}
+  {% assign website = website_object[1] %}
+  {% assign name_temp = website_object[0] | capitalize %}
+  {% assign name = website.name | default: name_temp %}
+  {% assign cleanurl = website.url | remove_first: 'http:' | remove_first: 'https:' | remove: '/' %}
+
+  {% if website.archived != true %}
+  <tr>
+
+    <td>
+      <a href="{{ website.url | downcase }}">{{ name }}</a>
+    </td>
+    <td class="right aligned
+    {% if website.policy.min < 8 %}
+      negative
+    {% elsif website.policy.min >= 8 %}
+      positive
+    {% endif %}">
+      {{ website.policy.min }}
+    </td>
+    <td class="right aligned
+    {% if website.policy.max <= 64 %}
+      negative
+    {% elsif website.policy.max <= 160 %}
+      warning
+    {% else %}
+      positive
+    {% endif %}">
+      {{ website.policy.max }}
+    </td>
+    <td class="
+      {% if website.policy.character-set.size < 3  %}
+        negative
+      {% elsif website.policy.character-set.size >= 3 %}
+        {% if website.policy.character-set[0] == 'Letters' and website.policy.character-set[1] == 'Numbers' and website.policy.character-set[2] == 'Special' %}
+          positive
+        {% else %}
+          negative
+        {% endif %}
+      {% endif %}">
+
+      {% for characters in website.policy.character-set %}
+        {% if forloop.last %}
+          {{ characters | capitalize }}
+        {% elsif forloop.rindex == 2 %}
+          {{ characters | capitalize }} and
+        {% else %}
+          {{ characters | capitalize}},
+        {% endif %}
+      {% endfor %}
+    </td>
+    <td class="center aligned
+    {% if website.policy.filter-top == false or website.policy.filter-top == 'No' %}
+      negative
+    {% elsif website.policy.filter-top == true or website.policy.filter-top == 'Yes' %}
+      positive
+    {% endif %}">
+    {% if website.policy.filter-top == false %}
+      No
+    {% elsif website.policy.filter-top == true %}
+      Yes
+    {% else %}
+      {{website.policy.filter-top}}
+    {% endif %}
+    </td>
+    <td>
+      <a href="{{ website.policy.proof }}">
+        <img class="ui medium image centered" src="{{ website.policy.proof | downcase }}" alt="">
+      </a>
+    </td>
+    <!-- <td>{{ website.hashalgorithm }}</td> -->
+    <td class="center aligned
+    {% case website.ssllabs %}
+    {% when 'A+' or 'a+' or 'A' or 'a' or 'A-' or 'a-' %}
+      positive
+    {% when 'B' or 'b' or 'C' or 'c' %}
+      warning
+    {% when 'D' or 'd' or 'F' or 'f' %}
+      negative
+    {% endcase %}">
+      <a class="ui basic button
+      {% case website.ssllabs %}
+      {% when 'A+' or 'a+' or 'A' or 'a' or 'A-' or 'a-' %}
+        positive
+      {% when 'B' or 'b' or 'C' or 'c' %}
+        orange
+      {% when 'D' or 'd' or 'F' or 'f' %}
+        negative
+      {% endcase %}" href="https://www.ssllabs.com/ssltest/analyze.html?d={{ website.url | cgi_escape }}">{{ website.ssllabs | capitalize }}</a>
+    </td>
+    <td class="center aligned
+    {% case website.securityheaders %}
+    {% when 'A+' or 'a+' or 'A' or 'a' %}
+      positive
+    {% when 'B' or 'b' or 'C' or 'c' or 'D' or 'd' %}
+      warning
+    {% when 'E' or 'e' or 'F' or 'f' %}
+      negative
+    {% endcase %}">
+      <a class="ui basic button
+      {% case website.securityheaders %}
+      {% when 'A+' or 'a+' or 'A' or 'a' %}
+        positive
+      {% when 'B' or 'b' or 'C' or 'c' or 'D' or 'd' %}
+        orange
+      {% when  'E' or 'e' or 'F' or 'f' %}
+        negative
+      {% endcase %}" href="https://securityheaders.io/?q={{ website.url | cgi_escape }}&followRedirects=on">{{ website.securityheaders | capitalize }}</a>
+    </td>
+<!--     <td class="center aligned
+    {% if website.plaintextoffender == true or website.plaintextoffender == 'Yes' %}
+      negative
+    {% endif %}">
+    {% if website.plaintextoffender == false %}
+      No
+    {% elsif website.plaintextoffender == true %}
+      Yes
+    {% else %}
+      {{website.plaintextoffender}}
+    {% endif %}
+    </td> -->
+
+  </tr>
+  {% endif %}
+{% endfor %}
+  </tbody>
+  <!-- <tfoot>
+    <tr>
+      <th colspan="9">
+        <div class="ui right floated pagination menu">
+          <a class="icon item">
+            <i class="left chevron icon"></i>
+          </a>
+          <a class="item">1</a>
+          <a class="item">2</a>
+          <a class="item">3</a>
+          <a class="item">4</a>
+          <a class="icon item">
+            <i class="right chevron icon"></i>
+          </a>
+        </div>
+      </th>
+    </tr>
+  </tfoot> -->
+</table>

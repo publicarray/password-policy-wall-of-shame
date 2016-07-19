@@ -1,0 +1,10 @@
+---
+# Data for developers
+---
+{% for website_object in site.data.websites %}{% assign website = website_object[1] %}{% if website.archived != true %}{
+  "name":"{{website_object[0] | capitalize}}",
+  "url":"{{website.url | downcase}}",
+  "policy":"{{website.policy | jsonify}}",
+  "sslabs":"{{website.sslabs | capitalize}}",
+  "securityHeaders":"{{website.securityheaders | capitalize}}",
+}, {% endif %}{% endfor %}

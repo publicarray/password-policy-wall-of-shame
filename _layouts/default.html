@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  {% if page.css %}
+  {% for file in page.css %}
+  <link rel="stylesheet" href="{{ site.baseurl }}/{{ file }}">
+  {% endfor %}
+  {% endif %}
+  <body>
+
+    {% include header.html %}
+
+    <div class="ui main container">
+      {{ content }}
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+  {% include scripts.html %}
+  {% if page.js %}
+  {% for file in page.js %}
+  <script src="{{ site.baseurl }}/{{ file }}" type="text/javascript"></script>
+  {% endfor %}
+  {% endif %}
+</html>

@@ -1,0 +1,11 @@
+{% for node in pages_list %}
+  {% if group == null or group == node.group %}
+    {% if page.url == node.url %}
+      <a class="item active" href="{{node.url | prepend: site.baseurl}}">{{node.title}}</a>
+    {% else %}
+      <a class="item" href="{{node.url | prepend: site.baseurl}}">{{node.title}}</a>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+{% assign pages_list = nil %}
+{% assign group = nil %}

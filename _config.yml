@@ -1,0 +1,36 @@
+# Site settings
+title: Password Policy Wall Of Shame
+description: A list of websites that have a bad password policy.
+baseurl: "/password-policy-wall-of-shame"
+url: "http://publicarray.github.io/password-policy-wall-of-shame" # the base hostname & protocol for your site
+
+github_username:  publicarray
+
+# Build settings
+markdown: kramdown
+highlighter: pygments
+github: [Repository metadata]
+
+kramdown:
+    input: GFM
+
+# Set the Sass partials directory, as we're using @imports
+sass:
+    style: :expanded # You might prefer to minify using :compressed
+
+# Use the following plug-ins
+gems:
+    - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+
+# Exclude these files from your production _site
+exclude:
+    - Gemfile
+    - Gemfile.lock
+    - LICENSE
+    - README.md
+    - package.json
+    - semantic.json
+    - node_modules
+    - semantic/src
+    - semantic/tasks
+    - semantic/gulpfile.js
