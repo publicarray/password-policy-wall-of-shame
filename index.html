@@ -25,7 +25,7 @@ layout: default
   {% assign cleanurl = website._url | remove_first: 'http:' | remove_first: 'https:' | remove: '/' %}
   <tr>
     <td>
-      <a href="{{ /website.url | prepend: site.baseurl }}">{{ website.name | default: website.title }}</a>
+      <a href="{{ website.url | prepend: site.baseurl }}">{{ website.name | default: website.title }}</a>
     </td>
     <td>
       <a href="{{ website._url | downcase }}">{{ cleanurl }}</a>
@@ -78,7 +78,7 @@ layout: default
     </td>
     <td>
       <a href="{{ website.policy.proof }}">
-        <img class="ui medium image centered" src="{{ /website.policy.proof | prepend: site.baseurl }}" alt="">
+        <img class="ui medium image centered" src="{{ site.baseurl | append: '/' | append: website.policy.proof }}" alt="">
       </a>
     </td>
     <!-- <td>{{ website.hashalgorithm }}</td> -->
