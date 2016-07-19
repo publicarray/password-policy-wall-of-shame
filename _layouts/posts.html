@@ -11,6 +11,6 @@ layout: default
   <p>Character set: {{ website.policy.character-set | array_to_sentence_string }}</p>
   {% endif %}
   <p>Top10: {{website.policy.filter-top}}</p>
-  <p>Proof: <a href="{{ website.policy.proof }}"><img class="ui Big image bordered centered" src="{{ website.policy.proof | downcase }}" alt=""></a></p>
+  <p>Proof: <a href="{{ /website.policy.proof | prepend: site.baseurl }}"><img class="ui Big image bordered centered" src="{{ /website.policy.proof | prepend: site.baseurl }}" alt=""></a></p>
 <p>ssllabs: {{ website.ssllabs }}</p>
 <p>securityheaders: {{ website.securityheaders }}</p>
