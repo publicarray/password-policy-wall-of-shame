@@ -17,12 +17,13 @@ defaults:
     values:
       layout: "posts"
 
-webrick: # These are ignored by Github pages
-  headers:
-    Content-Security-Policy-Report-Only: "default-src 'none'; script-src 'self'; style-src 'self' fonts.googleapis.com; img-src *; font-src 'self' data: https://fonts.gstatic.com; form-action 'self'; block-all-mixed-content; connect-src 'self'; reflected-xss block; report-uri https://publicarray.report-uri.io/r/default/csp/reportOnly;"
-    X-XSS-Protection: 1; mode=block
-    X-Frame-Options: DENY
-    X-Content-Type-Options: nosniff
+## These are ignored by Github pages
+# webrick:
+#   headers:
+#     Content-Security-Policy-Report-Only: "default-src 'none'; script-src 'self'; style-src 'self' fonts.googleapis.com; img-src *; font-src 'self' data: https://fonts.gstatic.com; form-action 'self'; block-all-mixed-content; connect-src 'self'; reflected-xss block; report-uri https://publicarray.report-uri.io/r/default/csp/reportOnly;"
+#     X-XSS-Protection: 1; mode=block
+#     X-Frame-Options: DENY
+#     X-Content-Type-Options: nosniff
 
 # Build settings
 markdown: kramdown
