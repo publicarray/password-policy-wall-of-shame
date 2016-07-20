@@ -5,9 +5,9 @@
   {% for website in site.posts %}{
     "name":"{{website.name | default: website.title | escape}}",
     "ppwos_url":"{{site.url}}{{site.baseurl}}{{website.url}}",
-    "url":"{{website.url | downcase}}",
+    "url":"{{website._url | downcase}}",
     "policy":{{website.policy | jsonify}},
-    "sslabs":"{{website.sslabs | capitalize}}",
+    "sslabs":"{{website.ssllabs | capitalize}}",
     "securityheaders":"{{website.securityheaders | capitalize}}",
     "date":"{{website.date}}"
   }{% unless forloop.last %},{% endunless %}{% endfor %}
