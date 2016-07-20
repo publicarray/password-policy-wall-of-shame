@@ -1,11 +1,11 @@
-<header class="ui fixed menu">
+<header class="ui fixed stackable menu">
   <div class="ui container">
     <a class="header item" href="{{ site.baseurl }}/">{{ site.title }}</a>
     {% assign pages_list = site.pages %}
     {% assign group = 'navigation' %}
     {% include pages_list.html %}
     <div class="ui right loading aligned search item">
-      <div class="ui icon input">
+      <div class="ui transparent input">
         <input class="prompt" type="text" placeholder="Search...">
         <i class="search link icon"></i>
       </div>

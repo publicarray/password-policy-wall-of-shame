@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<table class="ui celled structured table">
+<table class="ui celled stackable structured table">
   <thead>
     <tr>
       <th rowspan="2">Name</th>
@@ -30,7 +30,7 @@ layout: default
     <td>
       <a href="{{ website._url | downcase }}">{{ cleanurl }}</a>
     </td>
-    <td class="right aligned
+    <td class="center aligned
     {% if website.policy.min < 8 %}
       negative
     {% elsif website.policy.min >= 8 %}
@@ -38,7 +38,7 @@ layout: default
     {% endif %}">
       {{ website.policy.min }}
     </td>
-    <td class="right aligned
+    <td class="center aligned
     {% if website.policy.max <= 64 %}
       negative
     {% elsif website.policy.max <= 160 %}
@@ -78,7 +78,7 @@ layout: default
     </td>
     <td>
       <a href="{{ website.policy.proof }}">
-        <img class="ui medium image centered" src="{{ site.baseurl | append: '/' | append: website.policy.proof }}" alt="">
+        <img class="ui image centered" src="{{ site.baseurl | append: '/' | append: website.policy.proof }}" alt="">
       </a>
     </td>
     <!-- <td>{{ website.hashalgorithm }}</td> -->
