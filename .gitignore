@@ -3,4 +3,6 @@ node_modules
 semantic/src
 semantic/tasks
 semantic/gulpfile.js
-Gemfile.lock
+semantic/dist/components
+semantic/dist/semantic.js
+semantic/dist/semantic.css

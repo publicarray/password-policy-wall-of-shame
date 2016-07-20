@@ -51,3 +51,6 @@ exclude:
     - semantic/src
     - semantic/tasks
     - semantic/gulpfile.js
+    - semantic/dist/components
+    - semantic/dist/semantic.js
+    - semantic/dist/semantic.css
