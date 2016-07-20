@@ -17,7 +17,7 @@ defaults:
     values:
       layout: "posts"
 
-webrick:
+webrick: # These are ignored by Github pages
   headers:
     Content-Security-Policy-Report-Only: "default-src 'none'; script-src 'self'; style-src 'self' fonts.googleapis.com; img-src *; font-src 'self' data: https://fonts.gstatic.com; form-action 'self'; block-all-mixed-content; connect-src 'self'; reflected-xss block; report-uri https://publicarray.report-uri.io/r/default/csp/reportOnly;"
     X-XSS-Protection: 1; mode=block

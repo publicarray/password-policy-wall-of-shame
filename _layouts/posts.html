@@ -2,15 +2,17 @@
 layout: default
 ---
 {% assign website = page %}
-
-<p>Website: <a href="{{ website.url | downcase }}">{{ website.name | default: website.title }}</a></p>
-<p>Password Policy</p>
-  <p>Min: {{ website.policy.min }}</p>
-  <p>Max: {{ website.policy.max }}</p>
-  {% if website.policy.character-set %}
-  <p>Character set: {{ website.policy.character-set | array_to_sentence_string }}</p>
-  {% endif %}
-  <p>Top10: {{website.policy.filter-top}}</p>
-  <p>Proof: <a href="{{ site.baseurl | append: '/' | append: website.policy.proof }}"><img class="ui Big image bordered centered" src="{{  site.baseurl | append: '/' | append: website.policy.proof }}" alt=""></a></p>
-<p>ssllabs: {{ website.ssllabs }}</p>
-<p>securityheaders: {{ website.securityheaders }}</p>
+<div class="ui main container">
+  <p>Website: <a href="{{ website.url | downcase }}">{{ website.name | default: website.title }}</a></p>
+  <p>Password Policy</p>
+    <p>Min: {{ website.policy.min }}</p>
+    <p>Max: {{ website.policy.max }}</p>
+    {% if website.policy.character-set %}
+    <p>Character set: {{ website.policy.character-set | array_to_sentence_string }}</p>
+    {% endif %}
+    <p>Top10: {{website.policy.filter-top}}</p>
+    <p>Proof: <a href="{{ site.baseurl | append: '/' | append: website.policy.proof }}"><img class="ui Big image bordered centered" src="{{  site.baseurl | append: '/' | append: website.policy.proof }}" alt=""></a></p>
+  <p>ssllabs: {{ website.ssllabs }}</p>
+  <p>securityheaders: {{ website.securityheaders }}</p>
+  <p>{{ content }}</p>
+</div>

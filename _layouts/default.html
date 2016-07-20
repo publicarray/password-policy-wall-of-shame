@@ -7,15 +7,9 @@
   {% endfor %}
   {% endif %}
   <body>
-
     {% include header.html %}
-
-    <div class="ui main container">
-      {{ content }}
-    </div>
-
+    {{ content }}
     {% include footer.html %}
-
   </body>
   {% include scripts.html %}
   {% if page.js %}

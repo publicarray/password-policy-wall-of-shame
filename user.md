@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: pages
 title: User Recommendations
 permalink: user
 group: navigation

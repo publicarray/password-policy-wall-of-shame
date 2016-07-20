@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: pages
 title: Developer Recommendations
 permalink: developer
 group: navigation

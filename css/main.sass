@@ -3,33 +3,35 @@
 ---
 // Customisations:
 // body
-    // background: #F9F9F9
+//     background: #F9F9F9
 
 // Fixes:
-i.github
-    margin: 0
-.main
+.ui.main.container
     margin-top: 5em
+
+.ui.link.list i.icon // .ui.link.list .item:first-child i.icon
+    margin: 0
+
 img, .image, .ui.table td .image
     max-width: 100%
     height: auto
 
 // Mobile:
 @media (max-width: 767px)
+    .ui.main.container
+        margin-top: 1em
     .ui.search .transparent .prompt
         min-height: 2em
     .ui.search i.icon
         font-size: 1.3em
         margin: 5px 0
-    .main
-        margin-top: 1em
     .ui.fixed.menu
         position: initial
 // Tablet
 @media only screen and (max-width: 991px) and (min-width: 768px)
-    .ui.container
+    .ui.main.index.container
         width: 100%
 // Big screens
 @media only screen and (min-width: 1200px)
-    .ui.container
+    .ui.main.container
         width: 80%
