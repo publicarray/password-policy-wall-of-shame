@@ -1,21 +1,15 @@
 <header class="ui fixed menu">
   <div class="ui container">
-  <a class="header item" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    <a class="header item" href="{{ site.baseurl }}/">{{ site.title }}</a>
     {% assign pages_list = site.pages %}
     {% assign group = 'navigation' %}
     {% include pages_list.html %}
+    <div class="ui right loading aligned search item">
+      <div class="ui icon input">
+        <input class="prompt" type="text" placeholder="Search...">
+        <i class="search link icon"></i>
+      </div>
+      <div class="results"></div>
+    </div>
   </div>
-  <!-- <div class="right item">
-    <div class="ui icon input">
-      <input type="text" placeholder="Search...">
-      <i class="search icon"></i>
-    </div>
-  </div> -->
-<!--   <div class="ui category search item">
-    <div class="ui transparent icon input">
-      <input class="prompt" type="text" placeholder="Search...">
-      <i class="search link icon"></i>
-    </div>
-    <div class="results"></div>
-  </div> -->
 </header>

@@ -1,0 +1,11 @@
+---
+# "category" : "{{ website.category }}",
+# "tags"     : "{{ website.tags | join: ', ' }}",
+---
+[
+  {% for website in site.posts %}{
+    "title":"{{ website.name | default: website.title | escape }}",
+    "url":"{{ site.baseurl }}{{ website.url }}",
+    "date":"{{ website.date }}"
+  }{% unless forloop.last %},{% endunless %}{% endfor %}
+]

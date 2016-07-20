@@ -2,7 +2,7 @@
 title: Password Policy Wall Of Shame
 description: A list of websites that have a bad password policy.
 baseurl: /password-policy-wall-of-shame
-url: http://publicarray.github.io/password-policy-wall-of-shame
+url: http://publicarray.github.io
 repository: publicarray/password-policy-wall-of-shame
 
 # Custom settings
@@ -19,7 +19,7 @@ defaults:
 
 webrick:
   headers:
-    Content-Security-Policy-Report-Only: "default-src 'none'; script-src 'self'; style-src 'self' fonts.googleapis.com; img-src *; font-src 'self' data: fonts.googleapis.com; form-action 'self'; block-all-mixed-content; reflected-xss block; report-uri https://publicarray.report-uri.io/r/default/csp/reportOnly;"
+    Content-Security-Policy-Report-Only: "default-src 'none'; script-src 'self'; style-src 'self' fonts.googleapis.com; img-src *; font-src 'self' data: https://fonts.gstatic.com; form-action 'self'; block-all-mixed-content; connect-src 'self'; reflected-xss block; report-uri https://publicarray.report-uri.io/r/default/csp/reportOnly;"
     X-XSS-Protection: 1; mode=block
     X-Frame-Options: DENY
     X-Content-Type-Options: nosniff
