@@ -6,7 +6,7 @@
     "name":"{{website.name | default: website.title | escape}}",
     "ppwos_url":"{{site.url}}{{site.baseurl}}{{website.url}}",
     "url":"{{website.url | downcase}}",
-    "policy":"{{website.policy | jsonify}}",
+    "policy":{{website.policy | jsonify}},
     "sslabs":"{{website.sslabs | capitalize}}",
     "securityheaders":"{{website.securityheaders | capitalize}}",
     "date":"{{website.date}}"
