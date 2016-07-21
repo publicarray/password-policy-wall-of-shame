@@ -1,13 +1,13 @@
-<header class="ui fixed stackable menu">
+<header class="ui fixed stackable inverted menu">
   <div class="ui container">
     <a class="header item" href="{{ site.baseurl }}/">{{ site.title }}</a>
     {% assign pages_list = site.pages %}
     {% assign group = 'navigation' %}
     {% include pages_list.html %}
     <div class="ui right loading aligned search item">
-      <div class="ui transparent input">
+      <div class="ui transparent inverted input">
         <input class="prompt" type="text" placeholder="Search...">
-        <i class="search link icon"></i>
+        <i class="search link inverted icon"></i>
       </div>
       <div class="results"></div>
     </div>
