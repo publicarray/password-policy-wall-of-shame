@@ -12,7 +12,7 @@ layout: default
     {% endif %}
     <p>Top10: {{website.policy.filter-top}}</p>
     <p>Proof: <a href="{{site.baseurl}}/assets/images/{{website.policy.proof}}"><img class="ui Big image bordered centered" src="{{site.baseurl}}/assets/images/{{website.policy.proof}}" alt=""></a></p>
-  <p>ssllabs: {{ website.ssllabs }}</p>
-  <p>securityheaders: {{ website.securityheaders }}</p>
+  <p>Qualys SSL Labs: {{ website.ssllabs }}</p>
+  <p>Security Headers: {{ website.securityheaders }}</p>
   <p>{{ content }}</p>
 </div>
