@@ -5,7 +5,7 @@ policy:
     min: 8
     max: 10
     # character-set: [Letters, Numbers, Special]
-    proof: img/etihadairways.png # https://twitter.com/larsklint/status/748615185762484224
+    proof: etihadairways.png # https://twitter.com/larsklint/status/748615185762484224
 ssllabs: B
 securityheaders: F
 ---

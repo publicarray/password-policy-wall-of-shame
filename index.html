@@ -78,8 +78,8 @@ layout: default
     {% endif %}
     </td>
     <td>
-      <a href="{{site.baseurl}}/{{website.policy.proof}}">
-        <img class="ui image centered" src="{{site.baseurl}}/{{website.policy.proof}}" alt="">
+      <a href="{{site.baseurl}}/assets/images/{{website.policy.proof}}">
+        <img class="ui image centered" src="{{site.baseurl}}/assets/images/{{website.policy.proof}}" alt="">
       </a>
     </td>
     <!-- <td>{{ website.hashalgorithm }}</td> -->
@@ -100,7 +100,7 @@ layout: default
         orange
       {% when 'D' or 'd' or 'F' or 'f' %}
         negative
-      {% endcase %}" href="https://www.ssllabs.com/ssltest/analyze.html?d={{ website.url | cgi_escape }}">{{ website.ssllabs | capitalize }}</a>
+      {% endcase %}" href="https://www.ssllabs.com/ssltest/analyze.html?d={{ website._url | cgi_escape }}">{{ website.ssllabs | capitalize }}</a>
     </td>
     <td class="center aligned
     {% case website.securityheaders %}
@@ -119,7 +119,7 @@ layout: default
         orange
       {% when  'E' or 'e' or 'F' or 'f' %}
         negative
-      {% endcase %}" href="https://securityheaders.io/?q={{ website.url | cgi_escape }}&followRedirects=on">{{ website.securityheaders | capitalize }}</a>
+      {% endcase %}" href="https://securityheaders.io/?q={{ website._url | cgi_escape }}&followRedirects=on">{{ website.securityheaders | capitalize }}</a>
     </td>
 <!--     <td class="center aligned
     {% if website.plaintextoffender == true or website.plaintextoffender == 'Yes' %}

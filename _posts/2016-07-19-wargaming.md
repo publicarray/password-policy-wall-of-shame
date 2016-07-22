@@ -4,7 +4,7 @@ policy:
     min: 8
     max:
     character-set: [Letters, Numbers, _]
-    proof: img/wargaming.png
+    proof: wargaming.png
 ssllabs: A-
 securityheaders: F
 ---
