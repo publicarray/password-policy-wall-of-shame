@@ -7,6 +7,8 @@ group: navigation
 
 # TL;DR
 * Do assume eventual compromise of your password database
+* Do encrypt website traffic with TLS
+* Do keep your servers are up-to-date (especially security critical software like OpenSSL)
 * Do hash passwords with **Argon2**, scrypt, bcrypt or PBKDF2
 * Do enforce passwords to a minimum of 8 characters
 * Do enforce the use of all 4 character classes (upper case, lower case, digits and special characters)
