@@ -47,7 +47,7 @@ layout: default
     {% else %}
       positive
     {% endif %}">
-      {{ website.policy.max }}
+      {{ website.policy.max | default: "-" }}
     </td>
     <td class="
     {% if website.policy.character-set.size < 3  %}
@@ -69,12 +69,12 @@ layout: default
     {% elsif website.policy.filter-top == true or website.policy.filter-top == 'Yes' %}
       positive
     {% endif %}">
-    {% if website.policy.filter-top == false %}
+    {% if website.policy.top10 == false %}
       No
-    {% elsif website.policy.filter-top == true %}
+    {% elsif website.policy.top10 == true %}
       Yes
     {% else %}
-      {{website.policy.filter-top}}
+      {{website.policy.top10}}
     {% endif %}
     </td>
     <td>

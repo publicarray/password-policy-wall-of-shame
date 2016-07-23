@@ -2,17 +2,128 @@
 layout: default
 ---
 {% assign website = page %}
+{% assign cleanurl = website._url | remove_first: 'http:' | remove_first: 'https:' | remove: '/' %}
 <div class="ui main container">
-  <p>Website: <a href="{{ website.url | downcase }}">{{ website.name | default: website.title }}</a></p>
-  <p>Password Policy</p>
-    <p>Min: {{ website.policy.min }}</p>
-    <p>Max: {{ website.policy.max }}</p>
-    {% if website.policy.character-set %}
-    <p>Character set: {{ website.policy.character-set | array_to_sentence_string }}</p>
-    {% endif %}
-    <p>Top10: {{website.policy.filter-top}}</p>
-    <p>Proof: <a href="{{site.baseurl}}/assets/images/{{website.policy.proof}}"><img class="ui Big image bordered centered" src="{{site.baseurl}}/assets/images/{{website.policy.proof}}" alt=""></a></p>
-  <p>Qualys SSL Labs: {{ website.ssllabs }}</p>
-  <p>Security Headers: {{ website.securityheaders }}</p>
-  <p>{{ content }}</p>
+  <div class="ui basic segment text container">
+    <h1 class="ui header">{{ website.name | default: website.title }}
+      <div class="sub header"><a href="{{ website._url | downcase }}">{{ cleanurl }}</a></div>
+    </h1>
+  </div>
+  <div class="ui basic segment text container">
+    <a href="{{site.baseurl}}/assets/images/{{website.policy.proof}}"><img class="ui Big image bordered centered" src="{{site.baseurl}}/assets/images/{{website.policy.proof}}" alt=""></a></p>
+  </div>
+  <div class="ui vertical segment"></div>
+  <div class="ui vertical segment">
+    <div class="ui responsive statistics">
+      <div class="statistic
+      {% if website.policy.min < 8 %}
+        red
+      {% elsif website.policy.min >= 8 %}
+        green
+      {% endif %}">
+        <div class="value">
+          {{ website.policy.min }}
+        </div>
+        <div class="label">
+          Min password length
+        </div>
+      </div>
+      <div class="statistic
+      {% if website.policy.max <= 64 %}
+        red
+      {% elsif website.policy.max <= 160 %}
+        yellow
+      {% else %}
+        green
+      {% endif %}">
+        <div class="value">
+          {{ website.policy.max | default: "-" }}
+        </div>
+        <div class="label">
+          Max password length
+        </div>
+      </div>
+      <div class="statistic
+      {% if website.policy.character-set.size < 3  %}
+        red
+      {% elsif website.policy.character-set.size >= 3 %}
+        {% if website.policy.character-set[0] == 'Letters' and website.policy.character-set[1] == 'Numbers' and website.policy.character-set[2] == 'Special' %}
+          green
+        {% else %}
+          red
+        {% endif %}
+      {% endif %}">
+        <div class="text value small">
+          {% if website.policy.character-set %}
+            {{ website.policy.character-set | array_to_sentence_string | replace: 'and', '<br>and' }}
+          {% endif %}
+        </div>
+        <div class="label">
+          Character set
+        </div>
+      </div>
+
+      <div class="statistic
+      {% if website.policy.top10 == false %}
+        red
+      {% elsif website.policy.top10 == true %}
+        green
+      {% endif %}">
+        <div class="text value">
+          {% if website.policy.top10 == false %}
+            No
+          {% elsif website.policy.top10 == true %}
+            Yes
+          {% else %}
+            {{website.policy.top10}}
+          {% endif %}
+        </div>
+        <div class="label">
+          Top 10
+        </div>
+      </div>
+
+      <div class="statistic">
+        <div class="value">
+          <a class="ui basic button huge
+          {% case website.ssllabs %}
+          {% when 'A+' or 'a+' or 'A' or 'a' or 'A-' or 'a-' %}
+            positive
+          {% when 'B' or 'b' or 'C' or 'c' %}
+            yellow
+          {% when 'D' or 'd' or 'F' or 'f' %}
+            negative
+          {% endcase %}" href="https://www.ssllabs.com/ssltest/analyze.html?d={{ website._url | cgi_escape }}">{{ website.ssllabs | capitalize }}</a>
+        </div>
+        <div class="label">
+          Qualys SSL Labs Score
+        </div>
+      </div>
+      <div class="statistic">
+        <div class="value">
+          <a class="ui basic button huge
+          {% case website.securityheaders %}
+          {% when 'A+' or 'a+' or 'A' or 'a' %}
+            positive
+          {% when 'B' or 'b' or 'C' or 'c' or 'D' or 'd' %}
+            yellow
+          {% when  'E' or 'e' or 'F' or 'f' %}
+            negative
+          {% endcase %}" href="https://securityheaders.io/?q={{ website._url | cgi_escape }}&followRedirects=on">{{ website.securityheaders | capitalize }}</a>
+        </div>
+        <div class="label">
+          Security Header Score
+        </div>
+      </div>
+    </div>
+  </div>
+  {% assign content = content | strip_newlines %}{% if content != '' %}
+  <div class="ui basic segment text container">
+    {{ content }}
+  </div>
+  {% endif %}
+  <div class="ui basic segment text container">
+    <p>Date Added: {{website.date | date: "%-d %B %Y" }}</p>
+  </div>
+
 </div>
