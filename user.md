@@ -16,7 +16,7 @@ group: navigation
 * [1Password](https://agilebits.com/onepassword)
 * [Lastpass](https://lastpass.com)
 
-[![](img/password_strength.png)](http://xkcd.com/936/)
+[![]({{site.baseurl}}/assets/images/password_strength.png)](http://xkcd.com/936/)
 
 ## Resources
 * [Generate passwords](http://passwordsgenerator.net)
