@@ -6,6 +6,7 @@ policy:
     max:
     character-set: [Letters, Numbers, Special]
     proof: propertyinvesting.png
-ssllabs: F
+ssllabs: B
 securityheaders: F
+updated-at: 2016-08-11
 ---

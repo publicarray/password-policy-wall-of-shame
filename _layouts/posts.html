@@ -122,8 +122,9 @@ layout: default
     {{ content }}
   </div>
   {% endif %}
-  <div class="ui basic segment text container">
-    <p>Date Added: {{website.date | date: "%-d %B %Y" }}</p>
+  <div class="ui basic segment text container grid">
+    <p class="ui eight wide column">Last Updated: {{website.updated-at | default: website.date | date: "%-d %B %Y" }}</p>
+    <p class="ui eight wide column right aligned">Date Added: {{website.date | date: "%-d %B %Y" }}</p>
   </div>
 
 </div>
