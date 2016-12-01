@@ -1,13 +1,13 @@
 # Site settings
 title: Password Policy Wall Of Shame
 description: A list of websites that have a bad password policy.
-baseurl: /password-policy-wall-of-shame
+# baseurl: /password-policy-wall-of-shame
 url: http://publicarray.github.io
 repository: publicarray/password-policy-wall-of-shame
 
 # Custom settings
 permalink: :title
-paginate: 5
+paginate: 10
 paginate_path: "/:num/"
 defaults:
   -
