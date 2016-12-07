@@ -21,6 +21,7 @@ group: navigation
 
 ## Resources
 * [OWASP: Password Storage Cheat Sheet](https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet)
+* [securepasswords.info](https://securepasswords.info/)
 * [Presentation: Your Password Complexity Requirements are Worthless - OWASP AppSecUSA 2014](https://www.youtube.com/watch?v=zUM7i8fsf0g) - [[slides]](https://www.korelogic.com/Resources/Presentations/bsidesavl_pathwell_2014-06.pdf)
 * [Top 500 passwords - 2008](http://www.whatsmypass.com/the-top-500-worst-passwords-of-all-time)
 * [OWASP: Brute force attack](https://www.owasp.org/index.php/Brute_force_attack)
