@@ -18,7 +18,7 @@ group: navigation
 <!-- * Do audit most common password mask on your website and limit those. (only allow one password per topology and increment when needed) # commented due to being impractical for most users for now -->
 * **Do not** enforce a limited character set (allow all [ASCII](http://www.asciitable.com) and [Unicode](http://unicode-table.com/en/) characters)
 * **Do not** enforce a maximum password length (if you do have it at least higher than 160 character)
-* **Do not** enforce the rotations of passwords
+* **Do not** enforce the rotation of passwords
 <!-- * Do not enforce a password change policy  # debatable -->
 
 ## Resources
