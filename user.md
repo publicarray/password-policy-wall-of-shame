@@ -7,7 +7,7 @@ group: navigation
 
 # TL;DR
 * Use a password manager and [generate (30 character) long random passwords](http://passwordsgenerator.net)!
-* Do enable Two-factor authentication where ever possible (but, it is better not to use SMS if an alternate option is available)
+* Do enable Two-factor authentication where ever possible (but, it is better not to use SMS if an alternate option is available) [sites that offer 2FA](https://twofactorauth.org/)
 * Do not reuse passwords!
 * Do not use information about yourself as a password (e.g birth date)
 
