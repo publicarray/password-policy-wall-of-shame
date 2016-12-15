@@ -18,7 +18,7 @@ group: navigation
 <!-- * Do limit dictionary words and repeated characters (aaaaaaaa) # debatable, should we allow passphrases and password padding? -->
 <!-- * Do audit most common password mask on your website and limit those. (only allow one password per topology and increment when needed) # commented due to being impractical for most users for now -->
 * **Do not** enforce a limited character set (allow all [ASCII](http://www.asciitable.com) and [Unicode](http://unicode-table.com/en/) characters, yes you should allow emoji as part of a password👌)
-* **Do not** enforce a maximum password length (if you need to have it, set it at least higher than 160 characters)
+* **Do not** enforce a maximum password length (if you need to have it, set it at least higher than 100 characters)
 * **Do not** enforce the rotation of passwords
 <!-- * Do not enforce a password change policy  # debatable -->
 
