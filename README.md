@@ -6,3 +6,13 @@ A list of websites that have a bad password policy.
 http://plaintextoffenders.com
 
 https://twofactorauth.org
+
+
+## Run locally
+
+```sh
+bundle
+npm install semantic-ui
+cd semantic && gulp build && cd ..
+bundle exec jekyll serve
+```

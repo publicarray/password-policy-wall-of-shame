@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.html",
   "dependencies": {
-    "semantic-ui": "^2.2.2"
+    "semantic-ui": "^2.2.6"
   },
   "devDependencies": {},
   "scripts": {
