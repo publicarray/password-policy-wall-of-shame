@@ -15,12 +15,13 @@ group: navigation
 * [Keepass](http://keepass.info)
 * [1Password](https://agilebits.com/onepassword)
 * [Lastpass](https://lastpass.com)
+* A physical notebook
 
 [![]({{site.baseurl}}/assets/images/password_strength.png)](http://xkcd.com/936/)
 
 ## Resources
+* [How to choose a good password](https://www.youtube.com/watch?v=PVL0KARSXSM&list=PLYEr6kVanyrPu1qZ5g6iOr0v4ImpOOCSH&index=2)
 * [Generate passwords](http://passwordsgenerator.net)
 * [Passwords unmasked](http://wpengine.com/unmasked/)
 * [Dropbox: JS Password strength meter - zxcvbn](https://dl.dropboxusercontent.com/u/209/zxcvbn/test/index.html)
 * [Kaspersky: JS Password strength meter](https://password.kaspersky.com)
-<!-- * [passwords](https://www.grc.com/passwords.htm) -->
