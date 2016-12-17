@@ -22,6 +22,7 @@ group: navigation
 ## Resources
 * [How to choose a good password](https://www.youtube.com/watch?v=PVL0KARSXSM&list=PLYEr6kVanyrPu1qZ5g6iOr0v4ImpOOCSH&index=2)
 * [Generate passwords](http://passwordsgenerator.net)
+* [Diceware](http://world.std.com/~reinhold/diceware.html)
 * [Passwords unmasked](http://wpengine.com/unmasked/)
 * [Dropbox: JS Password strength meter - zxcvbn](https://dl.dropboxusercontent.com/u/209/zxcvbn/test/index.html)
 * [Kaspersky: JS Password strength meter](https://password.kaspersky.com)
