@@ -2,7 +2,7 @@
 title: Password Policy Wall Of Shame
 description: A list of websites that have a bad password policy.
 # baseurl: /password-policy-wall-of-shame
-url: http://publicarray.github.io
+url: https://ppwos.sebastian-schmidt.me
 repository: publicarray/password-policy-wall-of-shame
 
 # Custom settings
