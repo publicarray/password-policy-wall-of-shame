@@ -20,6 +20,7 @@ group: navigation
 [![]({{site.baseurl}}/assets/images/password_strength.png)](http://xkcd.com/936/)
 
 ## Resources
+* [EFF Surveillance Self Defence](https://ssd.eff.org) - [Playlist](https://ssd.eff.org/en/playlist)
 * [How to choose a good password](https://www.youtube.com/watch?v=PVL0KARSXSM&list=PLYEr6kVanyrPu1qZ5g6iOr0v4ImpOOCSH&index=2)
 * [Generate passwords](http://passwordsgenerator.net)
 * [Diceware](http://world.std.com/~reinhold/diceware.html)
