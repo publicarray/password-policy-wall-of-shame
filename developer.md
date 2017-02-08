@@ -37,3 +37,92 @@ group: navigation
 * [Kaspersky: JS Password strength meter](https://password.kaspersky.com)
 * [JS topology test based KoreLogic's PathWell Password Data](http://www.genusa.com/test_password.html)
 * [Dropbox blog: How Dropbox securely stores your passwords](https://blogs.dropbox.com/tech/2016/09/how-dropbox-securely-stores-your-passwords/)
+
+## Example of what not to do
+
+<style>
+    #message{
+        color:red;
+    }
+</style>
+<form id="form">
+    <div>
+        Try to enter a valid Password: <input type="password" id="password" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete="off">
+    </div>
+    <br>
+<!--     <div>
+        Confirm Password: <input type="password" id="confirm-password" onselectstart="return false" onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete="off">
+    </div>
+    <br> -->
+    <div>
+        <p id="message"></p>
+    </div>
+    <br>
+    <div>
+        <input type="submit">
+    </div>
+    <br>
+</form>
+<script>
+
+    document.getElementById('password').addEventListener('keyup', validate);
+    // document.getElementById('confirm-password').addEventListener('keyup', validate);
+    document.getElementById('form').onsubmit = validate;
+
+    function validate(e) {
+        e.preventDefault();
+
+        var passwordEl = document.getElementById('password');
+        // var confirmPasswordEl = document.getElementById('confirm-password');
+        var password = passwordEl.value;
+        // var confirmPassword = confirmPasswordEl.value;
+
+        if (password == '') {
+            setMessage("Password must not be empty");
+        // } else if (password != confirmPassword) {
+        //     setMessage("Passwords must match");
+        } else if (countSymbols(password) <= 8 ) {
+            setMessage("Password must be longer than 8 characters");
+        } else if (countSymbols(password) >= 10) {
+            setMessage("Password must be shorter than 10 characters")
+        } else if (!/[a-z]/.test(password)) {
+            setMessage("Password must contain a lower-case letter");
+        } else if (!/\d/.test(password)) {
+            setMessage("Password must contain a number");
+        } else if (/\d{2,}/.test(password)) {
+            setMessage("Password must not contain numbers in sequence, next to each other");
+        } else if (!/[A-Z]/.test(password)) {
+            setMessage("Password must contain an upper-case letter");
+        } else if (/[A-Z]{2,}/.test(password)) {
+            setMessage("Password must not contain upper-case letters in sequence");
+        } else if (/[~!@#$%^&*()_+{}|:"<>?`,./;''\[\]\\=\-´œ∑´®†¥¨ˆøπ“‘åß©˙∆˚¬…æΩ≈˜µ≤≥÷√]/.test(password)) {
+            setMessage("Password must not contain any special characters");
+        } else if (/\s/.test(password)) {
+            setMessage("Password must not contain white-space characters e.g a space");
+        } else if (/(\w)(?=\1+)/.test(password)) {
+            setMessage("Password must not have consecutive repeated characters. e.g. aa");
+        } else {
+            setMessage("Congrats! You managed to pass all of the crazy restrictions.", 'green');
+        }
+    }
+
+    function setMessage(str, colour) {
+        if (typeof colour == 'undefined') {
+            colour = 'red';
+        }
+        var messageEl = document.getElementById('message');
+        messageEl.innerText = str;
+        messageEl.style.color = colour;
+    }
+
+    // https://mathiasbynens.be/notes/javascript-unicode
+    function countSymbols(string) {
+        var regexAstralSymbols = /[\uD800-\uDBFF][\uDC00-\uDFFF]/g;
+        return string
+            // Replace every surrogate pair with a BMP symbol.
+            .replace(regexAstralSymbols, '_')
+            // …and *then* get the length.
+            .length;
+    }
+
+</script>
