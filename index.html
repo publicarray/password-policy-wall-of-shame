@@ -7,7 +7,7 @@ layout: default
     <tr>
       <th rowspan="2">Name</th>
       <th rowspan="2">Website</th>
-      <th colspan="5">Password Policy</th>
+      <th colspan="3">Password Policy</th>
       <!-- <th rowspan="2">Hashing Algorithm</th> -->
       <th rowspan="2"><a href="https://www.ssllabs.com/ssltest/index.html">Qualys SSL Labs</a><span class="ui icon" data-tooltip="A score on the security of the websites https connection (TLS)." data-inverted="" data-position="top right"><i class="info circle icon"></i></span></th>
       <th rowspan="2"><a href="https://securityheaders.io">Security Headers</a><span class="ui icon" data-tooltip="A score on the ability to protect the website and your browser from malicious actors." data-inverted="" data-position="top right"><i class="info circle icon"></i></span></th>
@@ -17,8 +17,8 @@ layout: default
       <th>Min<span class="ui icon" data-tooltip="Minimum number of characters allowed" data-inverted=""><i class="info circle icon"></i></span></th>
       <th>Max<span class="ui icon" data-tooltip="Maximum number of characters allowed" data-inverted=""><i class="info circle icon"></i></span></th>
       <th>Character set<span class="ui icon" data-tooltip="The different character sets that are allowed" data-inverted=""><i class="info circle icon"></i></span></th>
-      <th>Top10<span class="ui icon" data-tooltip="If the top used passwords are blacklisted" data-inverted=""><i class="info circle icon"></i></span></th>
-      <th>Proof<span class="ui icon" data-tooltip="Image of the password policy" data-inverted=""><i class="info circle icon"></i></span></th>
+      <!-- <th>Top10<span class="ui icon" data-tooltip="If the top used passwords are blacklisted" data-inverted=""><i class="info circle icon"></i></span></th> -->
+      <!-- <th>Proof<span class="ui icon" data-tooltip="Image of the password policy" data-inverted=""><i class="info circle icon"></i></span></th> -->
     </tr>
   </thead>
   <tbody>
@@ -63,7 +63,7 @@ layout: default
         {{ website.policy.character-set | array_to_sentence_string }}
       {% endif %}
     </td>
-    <td class="center aligned
+<!--     <td class="center aligned
     {% if website.policy.filter-top == false or website.policy.filter-top == 'No' %}
       negative
     {% elsif website.policy.filter-top == true or website.policy.filter-top == 'Yes' %}
@@ -76,12 +76,12 @@ layout: default
     {% else %}
       {{website.policy.top10}}
     {% endif %}
-    </td>
-    <td>
+    </td> -->
+<!--     <td>
       <a href="{{site.baseurl}}/assets/images/{{website.policy.proof}}">
         <img class="ui image centered" src="{{site.baseurl}}/assets/images/{{website.policy.proof}}" alt="">
       </a>
-    </td>
+    </td> -->
     <!-- <td>{{ website.hashalgorithm }}</td> -->
     <td class="center aligned
     {% case website.ssllabs %}
