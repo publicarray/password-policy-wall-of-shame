@@ -18,13 +18,13 @@ group: navigation
 <!-- * Do limit dictionary words and repeated characters (aaaaaaaa) # debatable, should we allow passphrases and password padding? -->
 <!-- * Do audit most common password mask on your website and limit those. (only allow one password per topology and increment when needed) # commented due to being impractical for most users for now -->
 * **Do not** enforce a limited character set (allow all [ASCII](http://www.asciitable.com) and [Unicode](http://unicode-table.com/en/) characters, yes you should allow emoji as part of a password👌)
-* **Do not** enforce a maximum password length (if you need to have it, set it at least higher [than 72 characters](https://security.stackexchange.com/questions/39849/does-bcrypt-have-a-maximum-password-length))
+* **Do not** enforce a maximum password length (if you need to have it, set it a reasonable high number. OWASP suggests 160 and NIST up to 64 characters)
 * **Do not** enforce the rotation of passwords
 <!-- * Do not enforce a password change policy  # debatable -->
 
 ## Resources
 * [OWASP: Password Storage Cheat Sheet](https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet)
-* [NIST.gov Password Guidelines](https://pages.nist.gov/800-63-3/sp800-63b.html#memorized-secret-verifiers)
+* [NIST.gov Password Guidelines](https://pages.nist.gov/800-63-3/sp800-63b.html#5112-memorized-secret-verifiers)
 * [Good Example Implementations](https://securepasswords.info/)
 * [Presentation: Your Password Complexity Requirements are Worthless - OWASP AppSecUSA 2014](https://www.youtube.com/watch?v=zUM7i8fsf0g) - [[slides]](https://www.korelogic.com/Resources/Presentations/bsidesavl_pathwell_2014-06.pdf)
 * [Top 500 passwords - 2008](http://www.whatsmypass.com/the-top-500-worst-passwords-of-all-time)
