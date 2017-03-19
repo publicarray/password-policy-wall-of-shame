@@ -29,9 +29,9 @@ layout: default
         </div>
       </div>
       <div class="statistic
-      {% if website.policy.max <= 64 %}
+      {% if website.policy.max < 20 %}
         red
-      {% elsif website.policy.max <= 160 %}
+      {% elsif website.policy.max < 40 %}
         yellow
       {% else %}
         green

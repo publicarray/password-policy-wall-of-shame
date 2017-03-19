@@ -40,9 +40,9 @@ layout: default
       {{ website.policy.min }}
     </td>
     <td class="center aligned
-    {% if website.policy.max <= 64 %}
+    {% if website.policy.max < 20 %}
       negative
-    {% elsif website.policy.max <= 160 %}
+    {% elsif website.policy.max < 40 %}
       warning
     {% else %}
       positive
