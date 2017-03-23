@@ -25,5 +25,6 @@ group: navigation
 * [Generate passwords](http://passwordsgenerator.net)
 * [Diceware](http://world.std.com/~reinhold/diceware.html)
 * [Passwords unmasked](http://wpengine.com/unmasked/)
+* [GRC haystack: Brute Force Password "Search Space" Calculator](https://www.grc.com/haystack.htm)
 * [Dropbox: JS Password strength meter - zxcvbn](https://dl.dropboxusercontent.com/u/209/zxcvbn/test/index.html)
 * [Kaspersky: JS Password strength meter](https://password.kaspersky.com)

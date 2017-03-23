@@ -9,18 +9,21 @@ group: navigation
 * Do assume eventual compromise of your password database (this means prepare for the worst)
 * Do encrypt website traffic with TLS
 * Do keep your servers up-to-date (especially security critical software like OpenSSL)
-* Do hash passwords with **[Argon2](https://en.wikipedia.org/wiki/Argon2)**, scrypt, bcrypt or PBKDF2
-* Do enforce passwords to a minimum of 8 characters
+* Do hash passwords with **[Argon2](https://en.wikipedia.org/wiki/Argon2)**, scrypt, bcrypt or PBKDF2 and set an appropriate high work factor (bcrypt: cost >=11).
+* Do enforce passwords to a minimum of 8 characters (generally longer passwords are better, prefer larger than 12)
 * Do rate limit authentication attempts and block repeated bad actors.
 * Do blacklist top used passwords ([123456](http://www.whatsmypass.com/the-top-500-worst-passwords-of-all-time)) / common password masks ([?u?l?l?l?l?d?d](https://blog.netspi.com/netspis-top-password-masks-for-2015/)) / keyboard patterns ([qwerty](https://digi.ninja/projects/passpat.php))
 * Do offer Multi-factor Authentication ([Avoid](https://www.schneier.com/blog/archives/2012/02/the_failure_of_2.html) [the](http://www.zdnet.com/article/sms-tokens-are-vulnerable-to-interception-experts-warn/) [use](https://krebsonsecurity.com/2016/09/the-limits-of-sms-for-2-factor-authentication/) [of](https://pages.nist.gov/800-63-3/sp800-63b.html#out-of-band-authenticators) [SMS](https://github.com/usnistgov/800-63-3/issues/351))
-<!-- * Do **Not** enforce the use of all 4 character classes (upper case, lower case, digits and special characters) -->
+<!-- * Do block passwords equal to username, email address, URL/domain or name of the website/app. -->
 <!-- * Do limit dictionary words and repeated characters (aaaaaaaa) # debatable, should we allow passphrases and password padding? -->
 <!-- * Do audit most common password mask on your website and limit those. (only allow one password per topology and increment when needed) # commented due to being impractical for most users for now -->
 * **Do not** enforce a limited character set (allow all [ASCII](http://www.asciitable.com) and [Unicode](http://unicode-table.com/en/) characters, yes you should allow emoji as part of a password👌)
 * **Do not** enforce a maximum password length (if you need to have it, set it a reasonable high number. OWASP suggests 160 and NIST up to 64 characters)
 * **Do not** enforce the rotation of passwords
-<!-- * Do not enforce a password change policy  # debatable -->
+<!-- * **Do Not** enforce the use of all 4 character classes (upper case, lower case, digits and special characters) -->
+<!-- * **Do not** enforce a password change policy  # debatable -->
+
+Another option is [passwordless](https://encrypted.google.com/search?hl=en&q=passwordless)
 
 ## Resources
 * [OWASP: Password Storage Cheat Sheet](https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet)
@@ -34,6 +37,7 @@ group: navigation
 * [Scott Helme: Disclosing password storage policies on report-uri.io](https://scotthelme.co.uk/sites-tell-us-store-password/)
 * [Passwords unmasked](http://wpengine.com/unmasked/)
 * [PlainTextOffenders dev/FAQ](http://plaintextoffenders.com/faq/devs)
+* [GRC haystack: Brute Force Password "Search Space" Calculator](https://www.grc.com/haystack.htm)
 * [Dropbox: JS Password strength meter - zxcvbn](https://dl.dropboxusercontent.com/u/209/zxcvbn/test/index.html)
 * [Kaspersky: JS Password strength meter](https://password.kaspersky.com)
 * [JS topology test based KoreLogic's PathWell Password Data](http://www.genusa.com/test_password.html)
