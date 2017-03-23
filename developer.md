@@ -14,7 +14,7 @@ group: navigation
 * Do rate limit authentication attempts and block repeated bad actors.
 * Do blacklist top used passwords ([123456](http://www.whatsmypass.com/the-top-500-worst-passwords-of-all-time)) / common password masks ([?u?l?l?l?l?d?d](https://blog.netspi.com/netspis-top-password-masks-for-2015/)) / keyboard patterns ([qwerty](https://digi.ninja/projects/passpat.php))
 * Do offer Multi-factor Authentication ([Avoid](https://www.schneier.com/blog/archives/2012/02/the_failure_of_2.html) [the](http://www.zdnet.com/article/sms-tokens-are-vulnerable-to-interception-experts-warn/) [use](https://krebsonsecurity.com/2016/09/the-limits-of-sms-for-2-factor-authentication/) [of](https://pages.nist.gov/800-63-3/sp800-63b.html#out-of-band-authenticators) [SMS](https://github.com/usnistgov/800-63-3/issues/351))
-<!-- * Do enforce the use of all 4 character classes (upper case, lower case, digits and special characters)  # debatable -->
+<!-- * Do **Not** enforce the use of all 4 character classes (upper case, lower case, digits and special characters) -->
 <!-- * Do limit dictionary words and repeated characters (aaaaaaaa) # debatable, should we allow passphrases and password padding? -->
 <!-- * Do audit most common password mask on your website and limit those. (only allow one password per topology and increment when needed) # commented due to being impractical for most users for now -->
 * **Do not** enforce a limited character set (allow all [ASCII](http://www.asciitable.com) and [Unicode](http://unicode-table.com/en/) characters, yes you should allow emoji as part of a password👌)
@@ -25,6 +25,7 @@ group: navigation
 ## Resources
 * [OWASP: Password Storage Cheat Sheet](https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet)
 * [NIST.gov Password Guidelines](https://pages.nist.gov/800-63-3/sp800-63b.html#5112-memorized-secret-verifiers)
+* [Coding Horror Blog - Password Rules Are Bullshit](https://blog.codinghorror.com/password-rules-are-bullshit/)
 * [Good Example Implementations](https://securepasswords.info/)
 * [Presentation: Your Password Complexity Requirements are Worthless - OWASP AppSecUSA 2014](https://www.youtube.com/watch?v=zUM7i8fsf0g) - [[slides]](https://www.korelogic.com/Resources/Presentations/bsidesavl_pathwell_2014-06.pdf)
 * [Top 500 passwords - 2008](http://www.whatsmypass.com/the-top-500-worst-passwords-of-all-time)
