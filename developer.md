@@ -131,3 +131,99 @@ Another option is [passwordless](https://encrypted.google.com/search?hl=en&q=pas
     }
 
 </script>
+
+## Hash speed
+
+<p>
+1 kH/s is 1,000 (one thousand) hashes per second. <br>
+1 MH/s is 1,000,000 (one million) hashes per second. <br>
+1 GH/s is 1,000,000,000 (one billion) hashes per second. <br>
+1 TH/s is 1,000,000,000,000 (one trillion) hashes per second. <br>
+1 PH/s is 1,000,000,000,000,000 (one quadrillion) hashes per second. <br>
+1 EH/s is 1,000,000,000,000,000,000 (one quintillion) hashes per second. <br>
+Source: <a href="https://bitcoin.stackexchange.com/questions/9219/what-is-the-difference-between-kh-s-mh-s-and-gh-s#9220">https://bitcoin.stackexchange.com/questions/9219/what-is-the-difference-between-kh-s-mh-s-and-gh-s#9220</a>
+</p>
+
+My 2012 laptop can hash 284.6 Million MD5 hashes per second (284.6 MH/s).
+
+Now the guys that hash passwords for a living:
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">In case you were wondering what 300 kg of <a href="https://twitter.com/NVIDIAGeForce">@NVIDIAGeForce</a> GPUs looks like. I love this job :) <a href="https://t.co/EgPK2o00a3">pic.twitter.com/EgPK2o00a3</a></p>&mdash; Jeremi M Gosney (@jmgosney) <a href="https://twitter.com/jmgosney/status/837050427300511749">March 1, 2017</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/vortexau">@vortexau</a> <a href="https://twitter.com/NVIDIAGeForce">@NVIDIAGeForce</a> should be ~ 7 TH/s NTLM, 4 TH/s MD5</p>&mdash; Jeremi M Gosney (@jmgosney) <a href="https://twitter.com/jmgosney/status/837137128664543232">March 2, 2017</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<br>
+That is 4 Trillion MD5 hashes per second. Let's see how long it would take to retrieve passwords hashed with MD5 using bruteforce:
+<style type="text/css">
+    .ui.table td.align-right {
+        text-align: right;
+    }
+</style>
+<table class="ui celled stackable structured table">
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Example Password</th>
+            <th>Example Password</th>
+            <th>Duration</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>All lower-case, 8 character password</td>
+            <td>slrudowq</td>
+            <td>password</td>
+            <td>about 53 milliseconds</td>
+        </tr>
+        <tr>
+            <td colspan="4" class="align-right">search space / hashes per second = bruteforce time in seconds<br>217,180,147,158 / 4,000,000,000,000 = 0.05429503679 seconds = 54.3 milliseconds</td>
+        </tr>
+        <tr>
+            <td>8 character password</td>
+            <td>m7wY8sDs</td>
+            <td>P4ssW0rd</td>
+            <td>about 1 minute</td>
+        </tr>
+        <tr>
+            <td colspan="4" class="align-right">221,919,451,578,090 / 4,000,000,000,000 = 55.4798628945 seconds</td>
+        </tr>
+        <tr>
+            <td>8 character password with symbols</td>
+            <td>$QWt+4V:</td>
+            <td>P4$$W@rd</td>
+            <td>about 30 minutes</td>
+        </tr>
+        <tr>
+            <td colspan="4" class="align-right">6,704,780,954,517,120 / 4,000,000,000,000 = 1,676 seconds = 27 minutes 56 seconds</td>
+        </tr>
+        <tr>
+            <td>10 character password with symbols</td>
+            <td>FN*vX5t8=o</td>
+            <td>P4$$W@rd10</td>
+            <td>about half a year</td>
+        </tr>
+        <tr>
+            <td colspan="4" class="align-right">60,510,648,114,517,017,120 / 4,000,000,000,000 = 15,127,662 seconds = 25.01 weeks</td>
+        </tr>
+        <tr>
+            <td>All lower-case, 14 character password</td>
+            <td>guxpzsvhzpizgz</td>
+            <td>passwordqwerty</td>
+            <td>about half a year</td>
+        </tr>
+        <tr>
+            <td colspan="4" class="align-right">67,090,373,691,429,037,014 / 4,000,000,000,000 = 16,772,593 seconds = 27.73 weeks</td>
+        </tr>
+    </tbody>
+</table>
+
+Try it yourself at: [https://www.grc.com/haystack.htm](https://www.grc.com/haystack.htm)
+
+
+Now most password cracking is not done with bruteforce. It is done with password lists, mutations on the lists, rainbow tables and password masks. This reduces the time to guess the correct password considerably.
+
+`Tr0ub4dour&3`, `password`, `P4ssW0rd`, `P4$$W@rd`, `P4$$W@rd10` and `passwordqwerty`, would all take less than a second with the same set-up. But `FN*vX5t8=o` and `guxpzsvhzpizgz` are completely random so it would still take about half a year with bruteforce.
+
+Try it yourself with [zxcvbn](https://dl.dropboxusercontent.com/u/209/zxcvbn/test/index.html)
+
+<p></p>

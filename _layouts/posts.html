@@ -18,7 +18,9 @@ layout: default
       <div class="statistic
       {% if website.policy.min < 8 %}
         red
-      {% elsif website.policy.min >= 8 %}
+      {% elsif website.policy.min < 10 %}
+        yellow
+      {% else %}
         green
       {% endif %}">
         <div class="value">
