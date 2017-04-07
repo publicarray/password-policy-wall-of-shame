@@ -17,6 +17,8 @@ https://github.com/duffn/dumb-password-rules
 
 https://github.com/opws/opws-dataset
 
+https://github.com/mimuc/password-policy-dataset
+
 http://plaintextoffenders.com
 
 https://twofactorauth.org
