@@ -23,6 +23,8 @@ http://plaintextoffenders.com
 
 https://twofactorauth.org
 
+http://nothingofvalue.org
+
 ## Run locally
 
 ```sh
