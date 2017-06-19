@@ -19,7 +19,7 @@ group: navigation
 
 [![]({{site.baseurl}}/assets/images/password_strength.png)](http://xkcd.com/936/)
 
-More good security advice: http://nothingofvalue.org
+More good security advice: [http://nothingofvalue.org](http://nothingofvalue.org)
 
 ## Resources
 * [EFF Surveillance Self Defence](https://ssd.eff.org) - [Playlist](https://ssd.eff.org/en/playlist)
