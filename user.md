@@ -23,7 +23,8 @@ More good security advice: [http://nothingofvalue.org](http://nothingofvalue.org
 
 ## Resources
 * [EFF Surveillance Self Defence](https://ssd.eff.org) - [Playlist](https://ssd.eff.org/en/playlist)
-* [How to choose a good password](https://www.youtube.com/watch?v=PVL0KARSXSM&list=PLYEr6kVanyrPu1qZ5g6iOr0v4ImpOOCSH&index=2)
+* [How to choose a good password - Troy Hunt](https://www.youtube.com/watch?v=PVL0KARSXSM&list=PLYEr6kVanyrPu1qZ5g6iOr0v4ImpOOCSH&index=2)
+* [How to Choose a Password - Computerphile](https://www.youtube.com/watch?v=3NjQ9b3pgIg)
 * [Generate passwords](http://passwordsgenerator.net)
 * [Diceware](http://world.std.com/~reinhold/diceware.html)
 * [Passwords unmasked](http://wpengine.com/unmasked/)

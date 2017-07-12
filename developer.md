@@ -153,7 +153,7 @@ Now the guys that hash passwords for a living:
 <blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/vortexau">@vortexau</a> <a href="https://twitter.com/NVIDIAGeForce">@NVIDIAGeForce</a> should be ~ 7 TH/s NTLM, 4 TH/s MD5</p>&mdash; Jeremi M Gosney (@jmgosney) <a href="https://twitter.com/jmgosney/status/837137128664543232">March 2, 2017</a></blockquote> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <br>
-That is 4 Trillion MD5 hashes per second. Let's see how long it would take to retrieve passwords hashed with MD5 using bruteforce:
+That is 4 Trillion MD5 hashes per second. Let's see how long it would take to retrieve passwords hashed with MD5 using brute-force:
 <style type="text/css">
     .ui.table td.align-right {
         text-align: right;
@@ -170,16 +170,16 @@ That is 4 Trillion MD5 hashes per second. Let's see how long it would take to re
     </thead>
     <tbody>
         <tr>
-            <td>All lower-case, 8 character password</td>
+            <td>8 character password (lower-case letters)</td>
             <td>slrudowq</td>
             <td>password</td>
             <td>about 53 milliseconds</td>
         </tr>
         <tr>
-            <td colspan="4" class="align-right">search space / hashes per second = bruteforce time in seconds<br>217,180,147,158 / 4,000,000,000,000 = 0.05429503679 seconds = 54.3 milliseconds</td>
+            <td colspan="4" class="align-right">search space / hashes per second = brute-force time in seconds<br>217,180,147,158 / 4,000,000,000,000 = 0.05429503679 seconds = 54.3 milliseconds</td>
         </tr>
         <tr>
-            <td>8 character password</td>
+            <td>8 character password (numbers, letters)</td>
             <td>m7wY8sDs</td>
             <td>P4ssW0rd</td>
             <td>about 1 minute</td>
@@ -188,7 +188,7 @@ That is 4 Trillion MD5 hashes per second. Let's see how long it would take to re
             <td colspan="4" class="align-right">221,919,451,578,090 / 4,000,000,000,000 = 55.4798628945 seconds</td>
         </tr>
         <tr>
-            <td>8 character password with symbols</td>
+            <td>8 character password (numbers, letters, symbols)</td>
             <td>$QWt+4V:</td>
             <td>P4$$W@rd</td>
             <td>about 30 minutes</td>
@@ -197,7 +197,7 @@ That is 4 Trillion MD5 hashes per second. Let's see how long it would take to re
             <td colspan="4" class="align-right">6,704,780,954,517,120 / 4,000,000,000,000 = 1,676 seconds = 27 minutes 56 seconds</td>
         </tr>
         <tr>
-            <td>10 character password with symbols</td>
+            <td>10 character password (numbers, letters, symbols)</td>
             <td>FN*vX5t8=o</td>
             <td>P4$$W@rd10</td>
             <td>about half a year</td>
@@ -206,7 +206,7 @@ That is 4 Trillion MD5 hashes per second. Let's see how long it would take to re
             <td colspan="4" class="align-right">60,510,648,114,517,017,120 / 4,000,000,000,000 = 15,127,662 seconds = 25.01 weeks</td>
         </tr>
         <tr>
-            <td>All lower-case, 14 character password</td>
+            <td>14 character password (lower-case letters)</td>
             <td>guxpzsvhzpizgz</td>
             <td>passwordqwerty</td>
             <td>about half a year</td>
@@ -214,15 +214,34 @@ That is 4 Trillion MD5 hashes per second. Let's see how long it would take to re
         <tr>
             <td colspan="4" class="align-right">67,090,373,691,429,037,014 / 4,000,000,000,000 = 16,772,593 seconds = 27.73 weeks</td>
         </tr>
+        <tr>
+            <td>12 character password (numbers, letters, symbols)</td>
+            <td>Tc0rBVK,\s]9</td>
+            <td>Tr0ub4dour&3</td>
+            <td>about 43 centuries</td>
+        </tr>
+        <tr>
+            <td colspan="4" class="align-right">546,108,599,233,516,079,517,120 / 4,000,000,000,000 = 136,527,149,808.379 seconds = 225,739 weeks</td>
+        </tr>
+        <tr>
+            <td>28 character password (lower-case letters, symbols)<br>4 random words / <a href="http://world.std.com/~reinhold/diceware.html">diceware</a> - <a href="https://www.random.org/dice/?num=5">roll the dice</a></td>
+            <td>zorn snug woke stable jockey</td>
+            <td>correct horse battery stable</td>
+            <td>really long time if using brute-force</td>
+        </tr>
+        <tr>
+            <td colspan="4" class="align-right">Brute-force: 3.90x10^49 / 4,000,000,000,000 = 9.75x10^36 seconds = 3,091,704,718,417,047,290,000,000,000 centuries
+            <br><a href="http://world.std.com/~reinhold/dicewarewordlist.pdf">Diceware Dictionary</a>: <a href="http://world.std.com/~reinhold/dicewarefaq.html#someoneknows">7776 x 7776 x 7776 x 7776 x 7776</a> / 4,000,000,000,000 = 7,107,572.00748243 seconds = 11.75 weeks</td>
+        </tr>
     </tbody>
 </table>
 
 Try it yourself at: [https://www.grc.com/haystack.htm](https://www.grc.com/haystack.htm)
 
 
-Now most password cracking is not done with bruteforce. It is done with password lists, mutations on the lists, rainbow tables and password masks. This reduces the time to guess the correct password considerably.
+Now most password cracking is not done with brute-force. It is done with password lists, mutations on the lists, rainbow tables and password masks. This reduces the time to guess the correct password considerably.
 
-`Tr0ub4dour&3`, `password`, `P4ssW0rd`, `P4$$W@rd`, `P4$$W@rd10` and `passwordqwerty`, would all take less than a second with the same set-up. But `FN*vX5t8=o` and `guxpzsvhzpizgz` are completely random so it would still take about half a year with bruteforce.
+`Tr0ub4dour&3`, `password`, `P4ssW0rd`, `P4$$W@rd`, `P4$$W@rd10` and `passwordqwerty`, would all take less than a second with the same set-up. But `FN*vX5t8=o` and `guxpzsvhzpizgz` are completely random so it would still take about half a year with brute-force.
 
 Try it yourself with [zxcvbn](https://dl.dropboxusercontent.com/u/209/zxcvbn/test/index.html)
 
