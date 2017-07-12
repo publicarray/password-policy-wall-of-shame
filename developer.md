@@ -224,7 +224,7 @@ That is 4 Trillion MD5 hashes per second. Let's see how long it would take to re
             <td colspan="4" class="align-right">546,108,599,233,516,079,517,120 / 4,000,000,000,000 = 136,527,149,808.379 seconds = 225,739 weeks</td>
         </tr>
         <tr>
-            <td>28 character password (lower-case letters, symbols)<br>4 random words / <a href="http://world.std.com/~reinhold/diceware.html">diceware</a> - <a href="https://www.random.org/dice/?num=5">roll the dice</a></td>
+            <td>28 character password (lower-case letters, symbols)<br>4 random words / <a href="http://world.std.com/~reinhold/diceware.html">diceware</a></td>
             <td>zorn snug woke stable jockey</td>
             <td>correct horse battery stable</td>
             <td>really long time if using brute-force</td>
