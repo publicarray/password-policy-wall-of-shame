@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.html",
   "dependencies": {
-    "semantic-ui": "^2.2.6"
+    "semantic-ui": "^2.2.6",
+    "snyk": "^1.49.1"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "snyk": true
 }
