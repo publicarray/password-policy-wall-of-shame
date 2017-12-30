@@ -8,6 +8,10 @@
   },
   "devDependencies": {},
   "scripts": {
+    "setup": "bundle && yarn && cd semantic && gulp build && cd .. && bundle exec jekyll build",
+    "build": "bundle exec jekyll build",
+    "serve": "bundle exec jekyll serve --incremental",
+    "watch": "bundle exec jekyll build --watch --incremental",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
