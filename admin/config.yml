@@ -2,26 +2,26 @@ backend:
   name: git-gateway
   repo: publicarray/password-policy-wall-of-shame
   branch: gh-pages
-  media_folder: "assets/images"
-  public_folder: "/assets/images"
-  collections:
-    - name: "blog"
-      label: "Website"
-      folder: "_posts"
-      create: true
-      slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-      fields:
-        - {label: "Name", name: "name", widget: "string"}
-        - {label: "URL", name: "_url", widget: "string"}
-        - label: "Password Policy"
-          name: "policy"
-          widget: "object"
-          fields:
-            - {label: "Minimum Length", name: "min", widget: "number"}
-            - {label: "Maximum Length", name: "max", widget: "number"}
-            - {label: "Character set", name: "character-set", widget: "string"}
-            - {label: "Image as Proof", name: "proof", widget: "image"}
-        - {label: "SSL Labs score", name: "ssllabs", widget: "string"}
-        - {label: "Security headers score", name: "securityheaders", widget: "number"}
-        - {label: "Last updated date", name: "updated-at", widget: "datetime"}
-        - {label: "Body", name: "body", widget: "markdown"}
+media_folder: "assets/images"
+public_folder: "/assets/images"
+collections:
+  - name: "blog"
+    label: "Website"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "URL", name: "_url", widget: "string"}
+      - label: "Password Policy"
+        name: "policy"
+        widget: "object"
+        fields:
+          - {label: "Minimum Length", name: "min", widget: "number"}
+          - {label: "Maximum Length", name: "max", widget: "number"}
+          - {label: "Character set", name: "character-set", widget: "string"}
+          - {label: "Image as Proof", name: "proof", widget: "image"}
+      - {label: "SSL Labs score", name: "ssllabs", widget: "string"}
+      - {label: "Security headers score", name: "securityheaders", widget: "number"}
+      - {label: "Last updated date", name: "updated-at", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
