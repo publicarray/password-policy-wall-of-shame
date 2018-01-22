@@ -25,6 +25,8 @@ https://twofactorauth.org
 
 http://nothingofvalue.org
 
+https://defuse.ca/password-policy-hall-of-shame.htm
+
 ## Run locally
 
 ```sh
