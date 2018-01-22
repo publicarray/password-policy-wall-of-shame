@@ -27,7 +27,7 @@ Another option is [passwordless](https://encrypted.google.com/search?hl=en&q=pas
 
 ## Resources
 * [OWASP: Password Storage Cheat Sheet](https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet)
-* [NIST.gov Password Guidelines](https://pages.nist.gov/800-63-3/sp800-63b.html#5112-memorized-secret-verifiers)
+* [NIST.gov Password Guidelines](https://pages.nist.gov/800-63-3/sp800-63b.html#sec5)
 * [Coding Horror Blog - Password Rules Are Bullshit](https://blog.codinghorror.com/password-rules-are-bullshit/)
 * [Good Example Implementations](https://securepasswords.info/)
 * [Presentation: Your Password Complexity Requirements are Worthless - OWASP AppSecUSA 2014](https://www.youtube.com/watch?v=zUM7i8fsf0g) - [[slides]](https://www.korelogic.com/Resources/Presentations/bsidesavl_pathwell_2014-06.pdf)
@@ -100,8 +100,10 @@ Another option is [passwordless](https://encrypted.google.com/search?hl=en&q=pas
             setMessage("Password must contain an upper-case letter");
         } else if (/[A-Z]{2,}/.test(password)) {
             setMessage("Password must not contain upper-case letters in sequence");
-        } else if (/[~!@#$%^&*()_+{}|:"<>?`,./;''\[\]\\=\-´œ∑´®†¥¨ˆøπ“‘åß©˙∆˚¬…æΩ≈˜µ≤≥÷√]/.test(password)) {
-            setMessage("Password must not contain any special characters");
+        } else if (/[\[\]<>''!\\/]/.test(password)) {
+            setMessage("Password must not contain these special characters []<>''!\\/");
+        } else if (!/[~!@#$%^&*()_+{}|:"<>?`,./;''\[\]\\=\-´œ∑´®†¥¨ˆøπ“‘åß©˙∆˚¬…æΩ≈˜µ≤≥÷√]/.test(password)) {
+            setMessage("Password must contain special characters");
         } else if (/\s/.test(password)) {
             setMessage("Password must not contain white-space characters e.g a space");
         } else if (/(\w)(?=\1+)/.test(password)) {

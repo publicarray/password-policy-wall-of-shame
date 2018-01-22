@@ -36,7 +36,7 @@ kramdown:
 sass:
     style: :compressed
 
-gems:
+plugins:
     - jekyll-paginate
     - jekyll-sitemap
     - jekyll-feed
