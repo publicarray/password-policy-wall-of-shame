@@ -29,6 +29,7 @@ Another option is [passwordless](https://encrypted.google.com/search?hl=en&q=pas
 * [OWASP: Password Storage Cheat Sheet](https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet)
 * [NIST.gov Password Guidelines](https://pages.nist.gov/800-63-3/sp800-63b.html#sec5)
 * [Coding Horror Blog - Password Rules Are Bullshit](https://blog.codinghorror.com/password-rules-are-bullshit/)
+* [Cloudflare - How Developers got Password Security so Wrong](https://blog.cloudflare.com/how-developers-got-password-security-so-wrong/)
 * [Good Example Implementations](https://securepasswords.info/)
 * [Presentation: Your Password Complexity Requirements are Worthless - OWASP AppSecUSA 2014](https://www.youtube.com/watch?v=zUM7i8fsf0g) - [[slides]](https://www.korelogic.com/Resources/Presentations/bsidesavl_pathwell_2014-06.pdf)
 * [Top 500 passwords - 2008](http://www.whatsmypass.com/the-top-500-worst-passwords-of-all-time)
