@@ -9,7 +9,7 @@ group: navigation
 * Do assume eventual compromise of your password database (this means prepare for the worst)
 * Do encrypt website traffic with TLS
 * Do keep your servers up-to-date (especially security critical software like OpenSSL)
-* Do hash passwords with **[Argon2](https://en.wikipedia.org/wiki/Argon2)**, scrypt, bcrypt or PBKDF2 and set an appropriate high work factor (bcrypt: cost >=11).
+* Do hash passwords with **[Argon2](https://en.wikipedia.org/wiki/Argon2)**, Scrypt, Bcrypt or PBKDF2 and set an appropriate high work factor (bcrypt: cost >=11).
 * Do enforce passwords to a minimum of 8 characters (generally longer passwords are better, I prefer larger than 12)
 * Do rate limit authentication attempts and block repeated bad actors.
 * Do blacklist top used passwords ([123456](http://www.whatsmypass.com/the-top-500-worst-passwords-of-all-time)) / common password masks ([?u?l?l?l?l?d?d](https://blog.netspi.com/netspis-top-password-masks-for-2015/)) / keyboard patterns ([qwerty](https://digi.ninja/projects/passpat.php))
@@ -17,11 +17,12 @@ group: navigation
 <!-- * Do block passwords equal to username, email address, URL/domain or name of the website/app. -->
 <!-- * Do limit dictionary words and repeated characters (aaaaaaaa) # debatable, should we allow passphrases and password padding? -->
 <!-- * Do audit most common password mask on your website and limit those. (only allow one password per topology and increment when needed) # commented due to being impractical for most users for now -->
+* Do allow users to delete their accounts
 * **Do not** enforce a limited character set (allow all [ASCII](http://www.asciitable.com) and [Unicode](http://unicode-table.com/en/) characters, yes you should allow emoji as part of a password👌)
 * **Do not** enforce a maximum password length (if you need to have it, set it a reasonable high number. OWASP suggests 160 and NIST up to 64 characters)
 * **Do not** enforce the rotation of passwords
+* **Do not** block form auto-fill. Doing so unnecessarily restricts the recommended use of a password manager.
 <!-- * **Do Not** enforce the use of all 4 character classes (upper case, lower case, digits and special characters) -->
-<!-- * **Do not** enforce a password change policy  # debatable -->
 
 Another option is [passwordless](https://encrypted.google.com/search?hl=en&q=passwordless)
 
@@ -30,6 +31,7 @@ Another option is [passwordless](https://encrypted.google.com/search?hl=en&q=pas
 * [NIST.gov Password Guidelines](https://pages.nist.gov/800-63-3/sp800-63b.html#sec5)
 * [Coding Horror Blog - Password Rules Are Bullshit](https://blog.codinghorror.com/password-rules-are-bullshit/)
 * [Cloudflare - How Developers got Password Security so Wrong](https://blog.cloudflare.com/how-developers-got-password-security-so-wrong/)
+* [Google GCP - 12 best practices for user account, authorization and password management](https://cloudplatform.googleblog.com/2018/01/12-best-practices-for-user-account.html)
 * [Good Example Implementations](https://securepasswords.info/)
 * [Presentation: Your Password Complexity Requirements are Worthless - OWASP AppSecUSA 2014](https://www.youtube.com/watch?v=zUM7i8fsf0g) - [[slides]](https://www.korelogic.com/Resources/Presentations/bsidesavl_pathwell_2014-06.pdf)
 * [Top 500 passwords - 2008](http://www.whatsmypass.com/the-top-500-worst-passwords-of-all-time)
