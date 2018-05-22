@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.html",
   "dependencies": {
-    "semantic-ui": "^2.2.6"
+    "semantic-ui": "^2.3.1"
   },
   "devDependencies": {},
   "scripts": {
-    "setup": "bundle && yarn && cd semantic && gulp build && cd .. && bundle exec jekyll build",
+    "setup": "bundle && yarn && cd semantic && yarn gulp build && cd .. && bundle exec jekyll build",
+    "update": "bundle update && yarn upgrade --latest",
     "build": "bundle exec jekyll build",
     "serve": "bundle exec jekyll serve --incremental",
     "watch": "bundle exec jekyll build --watch --incremental",
