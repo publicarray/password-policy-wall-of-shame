@@ -4,7 +4,7 @@ description: A list of websites that have a bad password policy.
 # baseurl: /password-policy-wall-of-shame
 url: https://ppwos.sebastian-schmidt.me
 repository: publicarray/password-policy-wall-of-shame
-
+baseurl: https://ppwos.sebastian-schmidt.me
 # Custom settings
 permalink: :title
 paginate: 10
