@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.html",
   "dependencies": {
-    "semantic-ui": "^2.3.1"
+    "semantic-ui": "^2.4.1"
   },
-  "devDependencies": {},
   "scripts": {
     "setup": "bundle && yarn && cd semantic && yarn gulp build && cd .. && bundle exec jekyll build",
     "update": "bundle update && yarn upgrade --latest",
