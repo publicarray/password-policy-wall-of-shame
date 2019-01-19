@@ -7,6 +7,8 @@ Here is a [blog post](https://xato.net/perilous-password-policies-3ad038aa33b1#.
 
 I recommend following [@PWTooStrong](https://twitter.com/PWTooStrong) for more weak password policies.
 
+https://github.com/duffn/dumb-password-rules
+
 http://passwordistoostrong.tumblr.com/
 
 http://badpasswordpolicies.tumblr.com/
