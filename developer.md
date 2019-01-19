@@ -13,6 +13,7 @@ group: navigation
 * Do enforce passwords to a minimum of 8 characters (generally longer passwords are better, I prefer larger than 12)
 * Do rate limit authentication attempts and block repeated bad actors.
 * Do blacklist top used passwords ([123456](http://www.whatsmypass.com/the-top-500-worst-passwords-of-all-time)) / common password masks ([?u?l?l?l?l?d?d](https://blog.netspi.com/netspis-top-password-masks-for-2015/)) / keyboard patterns ([qwerty](https://digi.ninja/projects/passpat.php))
+* Do block [passwords that where in previous data breaches](https://haveibeenpwned.com/Passwords)
 * Do offer Multi-factor Authentication ([Avoid](https://www.schneier.com/blog/archives/2012/02/the_failure_of_2.html) [the](http://www.zdnet.com/article/sms-tokens-are-vulnerable-to-interception-experts-warn/) [use](https://krebsonsecurity.com/2016/09/the-limits-of-sms-for-2-factor-authentication/) [of](https://pages.nist.gov/800-63-3/sp800-63b.html#513-out-of-band-devices) [SMS](https://github.com/usnistgov/800-63-3/issues/351))
 <!-- * Do block passwords equal to username, email address, URL/domain or name of the website/app. -->
 <!-- * Do limit dictionary words and repeated characters (aaaaaaaa) # debatable, should we allow passphrases and password padding? -->
@@ -21,7 +22,7 @@ group: navigation
 * **Do not** enforce a limited character set (allow all [ASCII](http://www.asciitable.com) and [Unicode](http://unicode-table.com/en/) characters, yes you should allow emoji as part of a password👌)
 * **Do not** enforce a maximum password length (if you need to have it, set it a reasonable high number. OWASP suggests 160 and NIST up to 64 characters)
 * **Do not** enforce the rotation of passwords
-* **Do not** block form auto-fill. Doing so unnecessarily restricts the recommended use of a password manager.
+* **Do not** block form auto-fill or pasting in the password field. Doing so unnecessarily restricts the recommended use of a password manager.
 <!-- * **Do Not** enforce the use of all 4 character classes (upper case, lower case, digits and special characters) -->
 
 Another option is [passwordless](https://encrypted.google.com/search?hl=en&q=passwordless)
