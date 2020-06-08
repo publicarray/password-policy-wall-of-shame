@@ -31,6 +31,7 @@ https://defuse.ca/password-policy-hall-of-shame.htm
 
 ```sh
 bundle
+npm install -g gulp
 npm install semantic-ui
 cd semantic && gulp build && cd ..
 bundle exec jekyll serve

@@ -4,16 +4,19 @@
   "description": "",
   "main": "index.html",
   "dependencies": {
-    "semantic-ui": "^2.4.1"
+    "fomantic-ui": "^2.8.5"
   },
   "scripts": {
     "setup": "bundle && yarn && cd semantic && yarn gulp build && cd .. && bundle exec jekyll build",
-    "update": "bundle update && yarn upgrade --latest",
+    "update": "bundle update && yarn upgrade -L",
     "build": "bundle exec jekyll build",
-    "serve": "bundle exec jekyll serve --incremental",
-    "watch": "bundle exec jekyll build --watch --incremental",
+    "serve": "bundle exec jekyll serve --incremental --baseurl ''",
+    "watch": "bundle exec jekyll build --watch --incremental --baseurl ''",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
 }
