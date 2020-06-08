@@ -8,3 +8,5 @@ semantic/dist/semantic.js
 semantic/dist/semantic.css
 .jekyll-metadata
 *.log
+.DS_Store
+package-lock.json
